@@ -13,7 +13,7 @@ app.controller('MainController', function($scope, $http) {
         for(var i = 0; i < $scope.myData.length; i++) { 
             if ($scope.myData[i].value1 == $scope.name) {
                 $scope.content = ":D Now what";
-                
+                $scope.lol = "hurp";
                 //console.log("HEY!");
             }
             else {

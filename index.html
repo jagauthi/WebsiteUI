@@ -8,12 +8,16 @@
     
     <body ng-app="myApp">
 
-        <div ng-controller="MainController"></div>
-        <p style="font-size:20px;">Enter name:
-            <input type="text" ng-model="name"/>
-        </p>
-        <button ng-click="login">Login</button>
-        
+        <div ng-controller="MainController">
+            <p style="font-size:20px;">Enter name:
+                <input type="text" ng-model="name"/>
+            </p>
+            <button ng-click="login()">Login</button>
+
+            <div>
+                <h1>{{lol}}</h1>
+            </div>
+        </div>
         <!-- Modules -->
         <script src="js/app.js"></script>
         <!-- Controllers -->
