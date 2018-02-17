@@ -10,16 +10,11 @@
     <body ng-app="myApp">
 
         <div ng-controller="MainController" class="outer">
+            <h1>{{myData}}</h1>
             <div class="inner">
-                <h1>
-                    Username: <input type="text" ng-model="user"/>
-                </h1>
-                <h1>
-                    Password: <input type="text" ng-model="pass"/>
-                </h1>
-                <h1>
-                    <button ng-click="login()">Login</button>
-                </h1>
+                <h1>Username: <input type="text" ng-model="user"/></h1>
+                <h1>Password: <input type="text" ng-model="pass"/></h1>
+                <h1><button ng-click="login()">Login</button></h1>
             </div>
         </div>
         <!-- Modules -->
@@ -27,6 +22,6 @@
         <!-- Controllers -->
         <script src="js/controllers/MainController.js"></script>
         <!-- Services -->
-        <script src="js/services/TestService.js"></script>
+        <!-- Directives -->
     </body>
 </html>
