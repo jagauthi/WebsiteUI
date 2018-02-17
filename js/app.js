@@ -22,12 +22,14 @@ app.config(function ($httpProvider) {
   $httpProvider.defaults.headers.patch = {};
 });
 
-app.controller('LoginController', function($scope, $http) {
+
+app.controller('LoginController', function($scope, $location, $http) {
     
     var myScope = $scope;
+    var myLocation = $location;
     var myHttp = $http;
     
-    myScope.myData = {"test":1}
+    myScope.myData = {"LoginScreen":1}
     
     $scope.login = function() {
         myHttp.get('http://localhost:8080/getAccount?user='+myScope.user)
@@ -35,6 +37,7 @@ app.controller('LoginController', function($scope, $http) {
                 myScope.myData = response.data;
                 if((myScope.user === myScope.myData.user) && myScope.pass === myScope.myData.pass) {
                     console.log("Login success!");
+                    myLocation.url('/home');
                 }
         }, function (error) {
             myScope.content = "Something went wrong: " + error;
@@ -48,7 +51,7 @@ app.controller('MainController', function($scope, $http) {
     var myScope = $scope;
     var myHttp = $http;
     
-    myScope.myData = {"test":1}
+    myScope.myData = {"MainScreen":1}
     
     $scope.test = function() {
         myHttp.get('http://localhost:8080/getAccount?user=asdf')
