@@ -1,0 +1,25 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+
+.outter {
+    position: relative;
+    height: 100%;
+}
+
+.inner {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    border: 5px solid gray;
+    border-radius: 60px;
+}
