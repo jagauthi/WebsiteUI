@@ -7,6 +7,11 @@ h1 {
     margin-left: 20px;
 }
 
+h2 {
+    color: mediumpurple;
+    margin-left: 20px;
+}
+
 .outter {
     position: relative;
     height: 100%;
@@ -22,4 +27,22 @@ h1 {
     top: 0; left: 0; bottom: 0; right: 0;
     border: 5px solid gray;
     border-radius: 60px;
+}
+
+.container{
+    border: 5px solid gray;
+    border-radius: 60px;
+    padding:20px;
+}
+
+table {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    overflow: auto;
+    margin: auto;
+}
+
+th, td {
+    padding: 5px;
 }

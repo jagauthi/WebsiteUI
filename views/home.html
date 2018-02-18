@@ -1,8 +1,25 @@
 
 <div ng-controller="MainController" class="outer">
     <h1>MyData: {{myData}}</h1>
-    <div class="inner">
+    <div class="container">
         <h1>teehee</h1>
-        <h1><button ng-click="test()">Test</button></h1>
+        <h1><button ng-click="test()">GetItems</button></h1>
+        <table border="1">
+            <tr>
+                <th>itemNumber</th>
+                <th>cost</th> 
+                <th>price</th>
+                <th>description</th> 
+                <th>category</th>
+            </tr>
+            <tr ng-repeat="x in itemList">
+                <td>{{x.itemNumber}}</td>
+                <td>{{x.cost | currency}}</td>
+                <td>{{x.price | currency}}</td>
+                <td>{{x.description}}</td>
+                <td>{{x.category}}</td>
+            </tr>
+        </table>
+
     </div>
 </div>

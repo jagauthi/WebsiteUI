@@ -32,7 +32,7 @@ app.controller('LoginController', function($scope, $location, $http) {
     myScope.myData = {"LoginScreen":1}
     
     $scope.login = function() {
-        myHttp.get('http://localhost:8080/getAccount?user='+myScope.user)
+        myHttp.get('http://localhost:8080/login/getAccount?user='+myScope.user)
             .then(function (response) {
                 myScope.myData = response.data;
                 if((myScope.user === myScope.myData.user) && myScope.pass === myScope.myData.pass) {
@@ -52,11 +52,12 @@ app.controller('MainController', function($scope, $http) {
     var myHttp = $http;
     
     myScope.myData = {"MainScreen":1}
+    myScope.itemList = {}
     
     $scope.test = function() {
-        myHttp.get('http://localhost:8080/getAccount?user=asdf')
+        myHttp.get('http://localhost:8080/items/getItems')
             .then(function (response) {
-                myScope.myData = response.data;
+                myScope.itemList = response.data;
                 if((myScope.user === myScope.myData.user) && myScope.pass === myScope.myData.pass) {
                     console.log("Login success!");
                 }
