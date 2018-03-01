@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/login.html' 
     }) 
     .when('/home', {
-      controller: 'MainController',
+      controller: 'HomeController',
       templateUrl: 'views/home.html'
     })
     .otherwise({ 
@@ -23,6 +23,15 @@ app.config(function ($httpProvider) {
 });
 
 
+app.controller('MainController', function($scope) {
+    
+    var myScope = $scope;
+    
+    myScope.myData = {"CanChildSeeThis?":1}
+    
+});
+
+
 app.controller('LoginController', function($scope, $location, $http) {
     
     var myScope = $scope;
@@ -32,7 +41,7 @@ app.controller('LoginController', function($scope, $location, $http) {
     myScope.myData = {"LoginScreen":1}
     
     $scope.login = function() {
-        myHttp.get('http://localhost:8080/login/getAccount?user='+myScope.user)
+        myHttp.get('http://localhost:8080/getAccount?user='+myScope.user)
             .then(function (response) {
                 myScope.myData = response.data;
                 if((myScope.user === myScope.myData.user) && myScope.pass === myScope.myData.pass) {
@@ -46,12 +55,10 @@ app.controller('LoginController', function($scope, $location, $http) {
 });
 
 
-app.controller('MainController', function($scope, $http) {
+app.controller('HomeController', function($scope, $location, $http) {
     
     var myScope = $scope;
     var myHttp = $http;
-    
-    myScope.myData = {"MainScreen":1}
     myScope.itemList = {}
     
     $scope.test = function() {
